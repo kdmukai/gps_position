@@ -3,6 +3,8 @@ from django.db import models
 
 """--------------------------------------------------------------------
     Basic floating-point storage for GPS lat/lng coords.
+    
+    Abstract base clase so it can be customized as needed on implementation.
 --------------------------------------------------------------------"""
 class GPSPosition(models.Model):
     latitude = models.FloatField(blank=False, db_index=True)
