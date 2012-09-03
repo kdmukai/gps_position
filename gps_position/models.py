@@ -43,6 +43,7 @@ class GPSArea(GPSPosition):
             # 360degrees/cos(lat)/40075km = x degrees longitude/km @ latitude
             lng_km = 0.0089831566 / math.cos(math.radians(self.latitude))
             
+            # Calculate the bounding box defined by the radius
             self.max_lat = self.latitude + lat_km*self.radius
             self.min_lat = self.latitude - lat_km*self.radius
             self.max_lng = self.longitude + lng_km*self.radius
