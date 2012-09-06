@@ -53,5 +53,13 @@ class GPSArea(GPSPosition):
             
         super(GPSArea, self).save(*args, **kwargs) # Call the "real" save() method.
 
-    
+
+    def contains(self, gps_position):
+        if (self.min_lat <= gps_position.latitude and
+            self.max_lat >= gps_position.latitude and
+            self.min_lng <= gps_position.longitude and
+            self.max_lng >= gps_position.longitude):
+            return True
+        else:
+            return False
 
